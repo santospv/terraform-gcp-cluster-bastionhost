@@ -11,13 +11,13 @@ resource "google_compute_instance" "bastion_host" {
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
-      size = "30"
+      size = "15"
     }
   }
 
   network_interface {
-    network    = google_compute_network.terraform-network.name
-    subnetwork = google_compute_subnetwork.subnet.name
+    network    = "default"
+    # subnetwork = google_compute_subnetwork.subnet.name
     access_config {
     }
   }
