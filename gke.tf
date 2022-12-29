@@ -1,4 +1,4 @@
-resource "google_container_cluster" "cluster-desafio" {
+resource "google_container_cluster" "cluster-gcp" {
   name     = sensitive("${var.project_id}-gke")
   location = var.zone
   remove_default_node_pool = true
@@ -15,9 +15,9 @@ resource "google_container_cluster" "cluster-desafio" {
 }
 
 resource "google_container_node_pool" "nodes_primarios" {
-  name       = "${google_container_cluster.cluster-desafio.name}-node-pool"
+  name       = "${google_container_cluster.cluster-gcp.name}-node-pool"
   location   = var.zone
-  cluster    = google_container_cluster.cluster-desafio.name
+  cluster    = google_container_cluster.cluster-gcp.name
   node_count = var.gke_num_nodes
   node_config {
     oauth_scopes = [

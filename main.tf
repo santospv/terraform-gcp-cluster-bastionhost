@@ -11,6 +11,8 @@ terraform {
         bucket  = "terraform_bucket_pvs"
         prefix  = "terraform/terraform.tfstate"
         credentials  = "serviceaccount.json"
+        depends_on = google_filestore_instance.filestore-terraform
+
     }
 }
 
