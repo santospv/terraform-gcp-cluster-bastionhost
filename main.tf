@@ -11,13 +11,11 @@ terraform {
         bucket  = "terraform_bucket_pvs"
         prefix  = "terraform/terraform.tfstate"
         credentials  = "serviceaccount.json"
-        depends_on = google_filestore_instance.filestore-terraform
-
     }
 }
 
 provider "google" {
   project = var.project_id
   region  = var.region
-  credentials  = "${file("serviceaccount.yaml")}"
+  credentials  = "${file("pvs-devops-iac-377117-f7217ef6e808.json")}"
 }

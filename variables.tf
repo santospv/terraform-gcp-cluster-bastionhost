@@ -1,5 +1,5 @@
 variable "project_id" {
-  default     = "pvs-devops-iac"
+  default     = "pvs-devops-iac-377117"
   description = "id do projeto"
 }
 
