@@ -17,5 +17,5 @@ terraform {
 provider "google" {
   project = var.project_id
   region  = var.region
-  credentials  = "${file("pvs-devops-iac-377117-f7217ef6e808.json")}"
+  credentials  = "${file("serviceaccount.json")}"
 }
